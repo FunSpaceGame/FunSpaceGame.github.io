@@ -80,3 +80,5 @@ pubmatic.com, 159888, RESELLER, 5d62403b186f2ace
 
 facebook.com, 1398208253677115, DIRECT, c3e20eee3f780d68
 facebook.com, 300879013756464, DIRECT, c3e20eee3f780d68
+
+mopub.com, 35e697d1415a45f3bd23bb1dfab6638b, DIRECT, 74b46c0ea83967ca

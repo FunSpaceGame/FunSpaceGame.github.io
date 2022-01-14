@@ -1,4 +1,4 @@
 {
-	"privacy": true,
-	"realName": true
+	"privacy": false,
+	"realName": false
 }

@@ -6,30 +6,6 @@
 	"imageUrl": "https://funspacegame.github.io/images/ads_8.gif",
 	"apps": [
 		{
-			"name": "CirclesRun",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.circlesrun",
-			"ios": "https://apps.apple.com/cn/app/id1591562336",
-			"imageUrl": "https://funspacegame.github.io/images/ads_5.gif"
-		},
-		{
-			"name": "StickMan",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.rescuestickman",
-			"ios": "https://apps.apple.com/cn/app/id1555217704",
-			"imageUrl": "https://funspacegame.github.io/images/ads_1.gif"
-		},
-		{
-			"name": "BreakBricks",
-			"google": "https://play.google.com/store/apps/details?id=com.q1.breakbricks",
-			"ios": "https://apps.apple.com/us/app/id1372837123",
-			"imageUrl": "https://funspacegame.github.io/images/ads_6.gif"
-		},
-		{
-			"name": "StickShots",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.stickynumbers",
-			"ios": "https://apps.apple.com/us/app/id1602815280",
-			"imageUrl": "https://funspacegame.github.io/images/ads_7.gif"
-		},
-		{
 			"name": "ThornAndBalloons",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
 			"ios": "https://apps.apple.com/cn/app/id1611756991",

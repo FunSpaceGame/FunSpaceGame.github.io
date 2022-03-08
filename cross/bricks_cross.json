@@ -1,0 +1,15 @@
+{
+	"open": true,
+	"name": "ThornAndBalloons",
+	"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
+	"ios": "https://apps.apple.com/cn/app/id1611756991",
+	"imageUrl": "https://funspacegame.github.io/images/ads_8.gif",
+	"apps": [
+		{
+			"name": "ThornAndBalloons",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
+			"ios": "https://apps.apple.com/cn/app/id1611756991",
+			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
+		}
+	]
+}

@@ -23,6 +23,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.juicerun",
 			"ios": "https://apps.apple.com/us/app/id1598590896",
 			"imageUrl": "https://funspacegame.github.io/images/ads_9.gif"
+		},
+		{
+			"name": "ThornAndBalloons",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
+			"ios": "https://apps.apple.com/us/app/id1611756991",
+			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
 		}
 	]
 }

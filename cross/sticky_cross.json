@@ -1,0 +1,28 @@
+{
+	"open": true,
+	"level": 5,
+	"name": "JuiceRun",
+	"google": "https://play.google.com/store/apps/details?id=com.funspace.juicerun",
+	"ios": "https://apps.apple.com/us/app/id1598590896",
+	"imageUrl": "https://funspacegame.github.io/images/ads_9.gif",
+	"apps": [
+		{
+			"name": "CirclesRun",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.circlesrun",
+			"ios": "https://apps.apple.com/us/app/id1591562336",
+			"imageUrl": "https://funspacegame.github.io/images/ads_5.gif"
+		},
+		{
+			"name": "BreakBricks",
+			"google": "https://play.google.com/store/apps/details?id=com.q1.breakbricks",
+			"ios": "https://apps.apple.com/us/app/id1372837123",
+			"imageUrl": "https://funspacegame.github.io/images/ads_6.gif"
+		},
+		{
+			"name": "JuiceRun",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.juicerun",
+			"ios": "https://apps.apple.com/us/app/id1598590896",
+			"imageUrl": "https://funspacegame.github.io/images/ads_9.gif"
+		}
+	]
+}

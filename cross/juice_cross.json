@@ -28,6 +28,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
 			"ios": "https://apps.apple.com/us/app/id1611756991",
 			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
+		},
+		{
+			"name": "HungryWorm",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.hungryworm",
+			"ios": "https://apps.apple.com/us/app/id1631568458",
+			"imageUrl": "https://funspacegame.github.io/images/ads_11.gif"
 		}
 	]
 }

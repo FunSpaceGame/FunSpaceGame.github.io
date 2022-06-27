@@ -36,6 +36,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.bricksbreaker",
 			"ios": "https://apps.apple.com/us/app/id1372837123",
 			"imageUrl": "https://funspacegame.github.io/images/ads_10.gif"
+		},
+		{
+			"name": "HungryWorm",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.hungryworm",
+			"ios": "https://apps.apple.com/us/app/id1631568458",
+			"imageUrl": "https://funspacegame.github.io/images/ads_11.gif"
 		}
 	],
 	"urls": [

@@ -1,0 +1,46 @@
+{
+	"open": true,
+	"level": 5,
+	"apps": [
+		{
+			"name": "CirclesRun",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.circlesrun",
+			"ios": "https://apps.apple.com/us/app/id1591562336",
+			"imageUrl": "https://funspacegame.github.io/images/ads_5.gif"
+		},
+		{
+			"name": "BreakBricks",
+			"google": "https://play.google.com/store/apps/details?id=com.q1.breakbricks",
+			"ios": "https://apps.apple.com/us/app/id1372837123",
+			"imageUrl": "https://funspacegame.github.io/images/ads_6.gif"
+		},
+		{
+			"name": "StickShots",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.stickynumbers",
+			"ios": "https://apps.apple.com/us/app/id1602815280",
+			"imageUrl": "https://funspacegame.github.io/images/ads_7.gif"
+		},
+		{
+			"name": "JuiceRun",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.juicerun",
+			"ios": "https://apps.apple.com/us/app/id1598590896",
+			"imageUrl": "https://funspacegame.github.io/images/ads_9.gif"
+		},
+		{
+			"name": "BricksBreaker",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.bricksbreaker",
+			"ios": "https://apps.apple.com/us/app/id1372837123",
+			"imageUrl": "https://funspacegame.github.io/images/ads_10.gif"
+		},
+		{
+			"name": "ThornAndBalloons",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
+			"ios": "https://apps.apple.com/us/app/id1611756991",
+			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
+		}
+	],
+	"urls": [
+		"https://www.minigame.io/share/balloons/share1.html",
+		"https://www.minigame.io/share/balloons/share2.html"
+	]
+}

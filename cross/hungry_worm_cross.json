@@ -49,6 +49,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.drawtohome",
 			"ios": "https://apps.apple.com/us/app/id6443939277",
 			"imageUrl": "https://funspacegame.github.io/images/ads_15.gif"
+		},
+		{
+			"name": "PathToToilet",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.pathtotoilet",
+			"ios": "https://apps.apple.com/us/app/id6444326375",
+			"imageUrl": "https://funspacegame.github.io/images/ads_16.gif"
 		}
 	],
 	"urls": [

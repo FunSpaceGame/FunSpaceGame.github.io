@@ -55,6 +55,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.pathtotoilet",
 			"ios": "https://apps.apple.com/us/app/id6444326375",
 			"imageUrl": "https://funspacegame.github.io/images/ads_16.gif"
+		},
+		{
+			"name": "SliceToSave",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.slicetosave",
+			"ios": "https://apps.apple.com/us/app/id6444721686",
+			"imageUrl": "https://funspacegame.github.io/images/ads_17.gif"
 		}
 	],
 	"urls": [

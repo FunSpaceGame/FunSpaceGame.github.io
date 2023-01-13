@@ -70,6 +70,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.cuttosave",
 			"ios": "https://apps.apple.com/us/app/id1660763945",
 			"imageUrl": "https://funspacegame.github.io/images/ads_18.gif"
+		},
+		{
+			"name": "PullTheGold",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.pullthegold",
+			"ios": "https://apps.apple.com/us/app/id1664436111",
+			"imageUrl": "https://funspacegame.github.io/images/ads_19.gif"
 		}
 	]
 }

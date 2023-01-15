@@ -1,0 +1,70 @@
+{
+	"open": true,
+	"level": 5,
+	"apps": [
+		{
+			"name": "BreakBricks",
+			"google": "https://play.google.com/store/apps/details?id=com.q1.breakbricks",
+			"ios": "https://apps.apple.com/us/app/id1372837123",
+			"imageUrl": "https://funspacegame.github.io/images/ads_6.gif"
+		},
+		{
+			"name": "StickShots",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.stickynumbers",
+			"ios": "https://apps.apple.com/us/app/id1602815280",
+			"imageUrl": "https://funspacegame.github.io/images/ads_7.gif"
+		},
+		{
+			"name": "JuiceRun",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.juicerun",
+			"ios": "https://apps.apple.com/us/app/id1598590896",
+			"imageUrl": "https://funspacegame.github.io/images/ads_9.gif"
+		},
+		{
+			"name": "ThornAndBalloons",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
+			"ios": "https://apps.apple.com/us/app/id1611756991",
+			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
+		},
+		{
+			"name": "ProtectSheep",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.protectsheep",
+			"ios": "https://apps.apple.com/us/app/id1639555856",
+			"imageUrl": "https://funspacegame.github.io/images/ads_14.gif"
+		},
+		{
+			"name": "DrawToHome",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.drawtohome",
+			"ios": "https://apps.apple.com/us/app/id6443939277",
+			"imageUrl": "https://funspacegame.github.io/images/ads_15.gif"
+		},
+		{
+			"name": "PathToToilet",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.pathtotoilet",
+			"ios": "https://apps.apple.com/us/app/id6444326375",
+			"imageUrl": "https://funspacegame.github.io/images/ads_16.gif"
+		},
+		{
+			"name": "SliceToSave",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.slicetosave",
+			"ios": "https://apps.apple.com/us/app/id6444721686",
+			"imageUrl": "https://funspacegame.github.io/images/ads_17.gif"
+		},
+		{
+			"name": "CutToSave",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.cuttosave",
+			"ios": "https://apps.apple.com/us/app/id1660763945",
+			"imageUrl": "https://funspacegame.github.io/images/ads_18.gif"
+		},
+		{
+			"name": "SaveTheDog",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.savedog",
+			"ios": "https://apps.apple.com/us/app/id1635971989",
+			"imageUrl": "https://funspacegame.github.io/images/ads_13.gif"
+		}
+	],
+	"urls": [
+		"https://www.minigame.io/share/balloons/share1.html",
+		"https://www.minigame.io/share/balloons/share2.html"
+	]
+}

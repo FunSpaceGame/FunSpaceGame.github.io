@@ -79,6 +79,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.brushmaster",
 			"ios": "https://apps.apple.com/us/app/id6446643216",
 			"imageUrl": "https://funspacegame.github.io/images/ads_21.gif"
+		},
+		{
+			"name": "GoodsMerge",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/images/ads_22.gif"
 		}
 	],
 	"urls": [

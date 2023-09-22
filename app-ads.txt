@@ -366,3 +366,6 @@ indexexchange.com, 198417, RESELLER, 50b1c356f2c5c8fc
 tapjoy.com, ad5ab0f79a944d8ba4388e231c3c37a2, DIRECT, 29e595b1aeb5904d
 rubiconproject.com, 12286, RESELLER, 0bfd66d529a55807
 webeyemob.com, 70096, RESELLER
+
+# Chartboost
+chartboost.com,650d22efe5f4cff9506b0196,DIRECT

@@ -499,3 +499,5 @@ triplelift.com, 12456, RESELLER, 6c33edb13117fd86
 axonix.com, 57869, RESELLER	
 conversantmedia.com, 100308, RESELLER, 03113cd04947736d	
 admanmedia.com, 2045, RESELLER
+
+digitalturbine.com, 226215, DIRECT

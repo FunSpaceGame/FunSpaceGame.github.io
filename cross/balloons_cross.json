@@ -90,6 +90,12 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://funspacegame.github.io/images/ads_22.gif"
+		},
+		{
+			"name": "GoodsMerge2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/images/ads_23.gif"
 		}
 	],
 	"urls": [

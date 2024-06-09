@@ -95,6 +95,24 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://funspacegame.github.io/images/ads_23.gif"
+		},
+		{
+			"name": "WoodNuts",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://funspacegame.github.io/images/ads_24.gif"
+		},
+		{
+			"name": "WoodNuts2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://funspacegame.github.io/images/ads_25.gif"
+		},
+		{
+			"name": "WoodNuts3",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://funspacegame.github.io/images/ads_26.gif"
 		}
 	]
 }

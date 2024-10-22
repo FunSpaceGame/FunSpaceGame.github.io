@@ -105,10 +105,28 @@
 			"imageUrl": "https://funspacegame.github.io/images/ads_25.gif"
 		},
 		{
-			"name": "WoodNuts3",
+			"name": "WoodNuts4",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
 			"ios": "https://apps.apple.com/us/app/id6503929975",
-			"imageUrl": "https://funspacegame.github.io/images/ads_26.gif"
+			"imageUrl": "https://funspacegame.github.io/images/ads_27.gif"
+		},
+		{
+			"name": "WoodNuts5",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://funspacegame.github.io/images/ads_28.gif"
+		},
+		{
+			"name": "NutsOut",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
+			"ios": "https://apps.apple.com/us/app/id6683304227",
+			"imageUrl": "https://funspacegame.github.io/images/ads_29.gif"
+		},
+		{
+			"name": "NutsOut2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
+			"ios": "https://apps.apple.com/us/app/id6683304227",
+			"imageUrl": "https://funspacegame.github.io/images/ads_30.gif"
 		}
 	],
 	"urls": [

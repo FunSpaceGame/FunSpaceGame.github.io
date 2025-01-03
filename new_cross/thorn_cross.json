@@ -8,14 +8,56 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://www.minigame.io/gif/g1.gif",
-			"weight": 10
+			"weight": 100
 		},
 		{
 			"name": "GoodsMerge2",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://www.minigame.io/gif/g2.gif",
-			"weight": 10
+			"weight": 100
+		},
+		{
+			"name": "GoodsMerge3",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g3.gif",
+			"weight": 100
+		},
+		{
+			"name": "WoodNuts1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://www.minigame.io/gif/woods1.gif",
+			"weight": 100
+		},
+		{
+			"name": "WoodNuts2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://www.minigame.io/gif/woods2.gif",
+			"weight": 100
+		},
+		{
+			"name": "NutsOut1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
+			"ios": "https://apps.apple.com/us/app/id6683304227",
+			"imageUrl": "https://www.minigame.io/gif/nuts1.gif",
+			"weight": 100
+		},
+		{
+			"name": "NutsOut2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
+			"ios": "https://apps.apple.com/us/app/id6683304227",
+			"imageUrl": "https://www.minigame.io/gif/nuts2.gif",
+			"weight": 100
+		},
+		{
+			"name": "NutsOut2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
+			"ios": "https://apps.apple.com/us/app/id6683304227",
+			"imageUrl": "https://www.minigame.io/gif/nuts3.gif",
+			"weight": 100
 		}
 	]
 }

@@ -6,19 +6,22 @@
 			"name": "GoodsMerge1",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://funspacegame.github.io/gif/g1.gif"
+			"imageUrl": "https://funspacegame.github.io/gif/g1.gif",
+			"weight": 100
 		},
 		{
 			"name": "GoodsMerge2",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://funspacegame.github.io/gif/g2.gif"
+			"imageUrl": "https://funspacegame.github.io/gif/g2.gif",
+			"weight": 100
 		},
 		{
 			"name": "GoodsMerge3",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
 			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://funspacegame.github.io/gif/g3.gif"
+			"imageUrl": "https://funspacegame.github.io/gif/g3.gif",
+			"weight": 100
 		}
 	]
 }

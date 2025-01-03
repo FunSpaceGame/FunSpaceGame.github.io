@@ -1,0 +1,18 @@
+{
+	"open": true,
+	"level": 5,
+	"apps": [
+		{
+			"name": "GoodsMerge1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/goods_1.gif"
+		},
+		{
+			"name": "GoodsMerge2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/goods_2.gif"
+		}
+	]
+}

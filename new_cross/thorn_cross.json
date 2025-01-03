@@ -1,7 +1,7 @@
 {
 	"open": true,
 	"level": 5,
-	"v": 3,
+	"v": 4,
 	"apps": [
 		{
 			"name": "GoodsMerge1",
@@ -16,13 +16,6 @@
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://www.minigame.io/gif/g2.gif",
 			"weight": 10
-		},
-		{
-			"name": "GoodsMerge3",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
-			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://www.minigame.io/gif/g3.gif",
-			"weight": 100
 		}
 	]
 }

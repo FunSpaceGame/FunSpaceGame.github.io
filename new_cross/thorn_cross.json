@@ -1,7 +1,7 @@
 {
 	"open": true,
 	"level": 5,
-	"v": 4,
+	"v": 5,
 	"apps": [
 		{
 			"name": "GoodsMerge1",
@@ -25,6 +25,41 @@
 			"weight": 150
 		},
 		{
+			"name": "GoodsMerge4",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g4.gif",
+			"weight": 150
+		},
+		{
+			"name": "GoodsMerge5",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g5.gif",
+			"weight": 150
+		},
+		{
+			"name": "GoodsMerge6",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g6.gif",
+			"weight": 150
+		},
+		{
+			"name": "GoodsMerge7",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g7.gif",
+			"weight": 150
+		},
+		{
+			"name": "GoodsMerge8",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.goodsmerge",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://www.minigame.io/gif/g8.gif",
+			"weight": 150
+		},
+		{
 			"name": "WoodNuts1",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
 			"ios": "https://apps.apple.com/us/app/id6503929975",
@@ -36,6 +71,27 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
 			"ios": "https://apps.apple.com/us/app/id6503929975",
 			"imageUrl": "https://www.minigame.io/gif/woods2.gif",
+			"weight": 120
+		},
+		{
+			"name": "WoodNuts3",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://www.minigame.io/gif/woods3.gif",
+			"weight": 120
+		},
+		{
+			"name": "WoodNuts4",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://www.minigame.io/gif/woods4.gif",
+			"weight": 120
+		},
+		{
+			"name": "WoodNuts5",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
+			"ios": "https://apps.apple.com/us/app/id6503929975",
+			"imageUrl": "https://www.minigame.io/gif/woods5.gif",
 			"weight": 120
 		},
 		{

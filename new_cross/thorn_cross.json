@@ -114,6 +114,20 @@
 			"ios": "https://apps.apple.com/us/app/id6683304227",
 			"imageUrl": "https://www.minigame.io/gif/nuts3.gif",
 			"weight": 80
+		},
+		{
+			"name": "TripleRotate1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/triple1.gif",
+			"weight": 800
+		},
+		{
+			"name": "TripleRotate2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/triple2.gif",
+			"weight": 800
 		}
 	]
 }

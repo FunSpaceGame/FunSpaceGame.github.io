@@ -149,6 +149,18 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
 			"ios": "https://apps.apple.com/us/app/id6743780694",
 			"imageUrl": "https://funspacegame.github.io/gif/triple3.gif"
+		},
+		{
+			"name": "HoleSwallow1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.holeswallow",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/hole1.gif"
+		},
+		{
+			"name": "HoleSwallow2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.holeswallow",
+			"ios": "https://apps.apple.com/us/app/id6463769915",
+			"imageUrl": "https://funspacegame.github.io/gif/hole2.gif"
 		}
 	]
 }

@@ -1,7 +1,7 @@
 {
 	"open": true,
 	"level": 5,
-	"v": 7,
+	"v": 8,
 	"apps": [
 		{
 			"name": "GoodsMerge1",
@@ -137,18 +137,18 @@
 			"weight": 200
 		},
 		{
-			"name": "HoleSwallow1",
+			"name": "HoleSwallow3",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.holeswallow",
-			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://funspacegame.github.io/gif/hole1.gif",
-			"weight": 1000
+			"ios": "https://apps.apple.com/us/app/id6748628998",
+			"imageUrl": "https://funspacegame.github.io/gif/hole3.gif",
+			"weight": 500
 		},
 		{
-			"name": "HoleSwallow2",
+			"name": "HoleSwallow4",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.holeswallow",
-			"ios": "https://apps.apple.com/us/app/id6463769915",
-			"imageUrl": "https://funspacegame.github.io/gif/hole2.gif",
-			"weight": 1000
+			"ios": "https://apps.apple.com/us/app/id6748628998",
+			"imageUrl": "https://funspacegame.github.io/gif/hole4.gif",
+			"weight": 500
 		}
 	]
 }

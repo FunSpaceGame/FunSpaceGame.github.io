@@ -7,82 +7,10 @@
 	"imageUrl": "https://funspacegame.github.io/images/ads_8.gif",
 	"apps": [
 		{
-			"name": "CirclesRun",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.circlesrun",
-			"ios": "https://apps.apple.com/us/app/id1591562336",
-			"imageUrl": "https://funspacegame.github.io/images/ads_5.gif"
-		},
-		{
-			"name": "BreakBricks",
-			"google": "https://play.google.com/store/apps/details?id=com.q1.breakbricks",
-			"ios": "https://apps.apple.com/us/app/id1372837123",
-			"imageUrl": "https://funspacegame.github.io/images/ads_6.gif"
-		},
-		{
-			"name": "StickShots",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.stickynumbers",
-			"ios": "https://apps.apple.com/us/app/id1602815280",
-			"imageUrl": "https://funspacegame.github.io/images/ads_7.gif"
-		},
-		{
 			"name": "ThornAndBalloons",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.balloonbounce",
 			"ios": "https://apps.apple.com/us/app/id1611756991",
 			"imageUrl": "https://funspacegame.github.io/images/ads_8.gif"
-		},
-		{
-			"name": "HungryWorm",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.hungryworm",
-			"ios": "https://apps.apple.com/us/app/id1631568458",
-			"imageUrl": "https://funspacegame.github.io/images/ads_11.gif"
-		},
-		{
-			"name": "SaveTheDog",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.savedog",
-			"ios": "https://apps.apple.com/us/app/id1635971989",
-			"imageUrl": "https://funspacegame.github.io/images/ads_13.gif"
-		},
-		{
-			"name": "ProtectSheep",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.protectsheep",
-			"ios": "https://apps.apple.com/us/app/id1639555856",
-			"imageUrl": "https://funspacegame.github.io/images/ads_14.gif"
-		},
-		{
-			"name": "DrawToHome",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.drawtohome",
-			"ios": "https://apps.apple.com/us/app/id6443939277",
-			"imageUrl": "https://funspacegame.github.io/images/ads_15.gif"
-		},
-		{
-			"name": "PathToToilet",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.pathtotoilet",
-			"ios": "https://apps.apple.com/us/app/id6444326375",
-			"imageUrl": "https://funspacegame.github.io/images/ads_16.gif"
-		},
-		{
-			"name": "SliceToSave",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.slicetosave",
-			"ios": "https://apps.apple.com/us/app/id6444721686",
-			"imageUrl": "https://funspacegame.github.io/images/ads_17.gif"
-		},
-		{
-			"name": "CutToSave",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.cuttosave",
-			"ios": "https://apps.apple.com/us/app/id1660763945",
-			"imageUrl": "https://funspacegame.github.io/images/ads_18.gif"
-		},
-		{
-			"name": "PullTheGold",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.pullthegold",
-			"ios": "https://apps.apple.com/us/app/id1664436111",
-			"imageUrl": "https://funspacegame.github.io/images/ads_19.gif"
-		},
-		{
-			"name": "Brushmaster",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.brushmaster",
-			"ios": "https://apps.apple.com/us/app/id6446643216",
-			"imageUrl": "https://funspacegame.github.io/images/ads_21.gif"
 		},
 		{
 			"name": "GoodsMerge",
@@ -109,30 +37,6 @@
 			"imageUrl": "https://funspacegame.github.io/images/ads_25.gif"
 		},
 		{
-			"name": "WoodNuts4",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
-			"ios": "https://apps.apple.com/us/app/id6503929975",
-			"imageUrl": "https://funspacegame.github.io/images/ads_27.gif"
-		},
-		{
-			"name": "WoodNuts5",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.screw",
-			"ios": "https://apps.apple.com/us/app/id6503929975",
-			"imageUrl": "https://funspacegame.github.io/images/ads_28.gif"
-		},
-		{
-			"name": "NutsOut",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
-			"ios": "https://apps.apple.com/us/app/id6683304227",
-			"imageUrl": "https://funspacegame.github.io/images/ads_29.gif"
-		},
-		{
-			"name": "NutsOut2",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.nutsout",
-			"ios": "https://apps.apple.com/us/app/id6683304227",
-			"imageUrl": "https://funspacegame.github.io/images/ads_30.gif"
-		},
-		{
 			"name": "TripleRotate1",
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
 			"ios": "https://apps.apple.com/us/app/id6743780694",
@@ -143,12 +47,6 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
 			"ios": "https://apps.apple.com/us/app/id6743780694",
 			"imageUrl": "https://funspacegame.github.io/gif/triple2.gif"
-		},
-		{
-			"name": "TripleRotate3",
-			"google": "https://play.google.com/store/apps/details?id=com.funspace.triplerotate",
-			"ios": "https://apps.apple.com/us/app/id6743780694",
-			"imageUrl": "https://funspacegame.github.io/gif/triple3.gif"
 		},
 		{
 			"name": "HoleSwallow3",

@@ -173,6 +173,18 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.skewer",
 			"ios": "https://apps.apple.com/us/app/id6755769251",
 			"imageUrl": "https://funspacegame.github.io/gif/skewer2.gif"
+		},
+		{
+			"name": "DiamondColor1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.diamondcolor",
+			"ios": "https://apps.apple.com/us/app/id6762190414",
+			"imageUrl": "https://funspacegame.github.io/gif/diamond1.gif"
+		},
+		{
+			"name": "DiamondColor2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.diamondcolor",
+			"ios": "https://apps.apple.com/us/app/id6762190414",
+			"imageUrl": "https://funspacegame.github.io/gif/diamond2.gif"
 		}
 	]
 }

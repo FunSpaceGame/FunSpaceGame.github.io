@@ -6,9 +6,7 @@ google.com, pub-6879340456864843, DIRECT, f08c47fec0942fa0
 
 
 # Vungle
-vungle.com, 5af13f92e549c70aba89afbe, DIRECT, c107d686becd2d77
-vungle.com, 584b6437907237e70e00013b, DIRECT, c107d686becd2d77
-vungle.com, 5c49747b3633b874d47e7e0b, DIRECT, c107d686becd2d77
+vungle.com, 69e27a1a7dbb2c94758e47dd, DIRECT, c107d686becd2d77
 
 openx.com, 540280728, RESELLER, 6a698e2ec38604c6
 appnexus.com, 10128, RESELLER, f5ab79cb980f11d1

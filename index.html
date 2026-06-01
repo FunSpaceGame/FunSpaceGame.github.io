@@ -138,10 +138,10 @@
         }
 
         h1 {
-            max-width: 680px;
-            margin-bottom: 20px;
-            font-size: clamp(36px, 5.4vw, 68px);
-            line-height: 1.02;
+            max-width: 600px;
+            margin-bottom: 18px;
+            font-size: clamp(30px, 4.2vw, 52px);
+            line-height: 1.08;
             letter-spacing: 0;
         }
 
@@ -220,7 +220,7 @@
 
         .showcase {
             position: relative;
-            min-height: 590px;
+            min-height: 520px;
         }
 
         .showcase-grid {
@@ -236,80 +236,19 @@
             display: grid;
             place-items: center;
             aspect-ratio: 1;
+            padding: 12px;
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-radius: 8px;
+            background: rgba(255, 255, 255, 0.82);
             box-shadow: 0 18px 42px rgba(23, 20, 33, 0.12);
         }
 
-        .tile-art,
-        .card-art {
-            display: grid;
-            place-items: center;
+        .game-icon {
+            display: block;
             width: 100%;
-            aspect-ratio: 1;
-            background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 46%),
-                var(--tile-bg, linear-gradient(135deg, #00bf68, #1ea7ff));
-        }
-
-        .tile-art::before,
-        .card-art::before {
-            content: "";
-            width: 54%;
-            aspect-ratio: 1;
-            border-radius: var(--shape-radius, 28%);
-            background: rgba(255, 255, 255, 0.78);
-            box-shadow:
-                -28px 22px 0 rgba(255, 255, 255, 0.26),
-                24px -24px 0 rgba(255, 255, 255, 0.18),
-                inset 0 -12px 0 rgba(23, 20, 33, 0.08);
-        }
-
-        .tile-art.diamond,
-        .card-art.diamond {
-            --tile-bg: linear-gradient(135deg, #ff5fa2, #1bbfd2);
-            --shape-radius: 12%;
-        }
-
-        .tile-art.diamond::before,
-        .card-art.diamond::before {
-            transform: rotate(45deg);
-        }
-
-        .tile-art.hole,
-        .card-art.hole {
-            --tile-bg: linear-gradient(135deg, #1b1633, #8a65ff);
-            --shape-radius: 50%;
-        }
-
-        .tile-art.hole::before,
-        .card-art.hole::before {
-            background: #171421;
-            box-shadow:
-                0 0 0 18px rgba(255, 255, 255, 0.22),
-                inset 0 16px 24px rgba(255, 255, 255, 0.18);
-        }
-
-        .tile-art.pop,
-        .card-art.pop {
-            --tile-bg: linear-gradient(135deg, #ff6b6b, #ffb84d);
-            --shape-radius: 50% 50% 46% 54%;
-        }
-
-        .tile-art.rotate,
-        .card-art.rotate {
-            --tile-bg: linear-gradient(135deg, #7357ff, #1ea7ff);
-            --shape-radius: 8px;
-        }
-
-        .tile-art.wood {
-            --tile-bg: linear-gradient(135deg, #ffb84d, #00bf68);
-            --shape-radius: 8px;
-        }
-
-        .tile-art.puzzle {
-            --tile-bg: linear-gradient(135deg, #1ea7ff, #00bf68);
-            --shape-radius: 34%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
         .game-tile:nth-child(2),
@@ -388,7 +327,26 @@
             box-shadow: 0 18px 42px rgba(23, 20, 33, 0.07);
         }
 
-        .game-card div {
+        .game-card-media {
+            display: grid;
+            place-items: center;
+            aspect-ratio: 1;
+            padding: 24px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(246, 248, 252, 0.92)),
+                #f6f7fb;
+        }
+
+        .game-card-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            object-fit: contain;
+            box-shadow: 0 14px 28px rgba(23, 20, 33, 0.12);
+        }
+
+        .game-card-body {
             padding: 16px;
         }
 
@@ -646,12 +604,12 @@
 
             <div class="showcase" aria-label="Fun Space game previews">
                 <div class="showcase-grid">
-                    <div class="game-tile"><span class="tile-art puzzle" aria-label="Abstract casual game preview"></span></div>
-                    <div class="game-tile"><span class="tile-art diamond" aria-label="Abstract diamond coloring preview"></span></div>
-                    <div class="game-tile"><span class="tile-art hole" aria-label="Abstract collection game preview"></span></div>
-                    <div class="game-tile"><span class="tile-art rotate" aria-label="Abstract rotate puzzle preview"></span></div>
-                    <div class="game-tile"><span class="tile-art wood" aria-label="Abstract wood puzzle preview"></span></div>
-                    <div class="game-tile"><span class="tile-art pop" aria-label="Abstract balloon puzzle preview"></span></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/diamondcolor.png" alt="Diamond Coloring app icon"></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/hole.png" alt="Hole Swallow All app icon"></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/balloon.png" alt="Thorn And Balloons app icon"></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/triple.png" alt="Triple Rotate app icon"></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/juice.png" alt="Juice Run app icon"></div>
+                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/goodsmerge.png" alt="Goods Merge app icon"></div>
                 </div>
                 <div class="hero-card">
                     <h2>Small games, polished moments.</h2>
@@ -667,29 +625,37 @@
             </div>
             <div class="games">
                 <a class="game-card" href="/diamondcolor/index.html">
-                    <span class="card-art diamond" aria-label="Diamond Coloring - Jewel Sort"></span>
-                    <div>
+                    <div class="game-card-media">
+                        <img src="/assets/game-icons/diamondcolor.png" alt="Diamond Coloring - Jewel Sort">
+                    </div>
+                    <div class="game-card-body">
                         <h3>Diamond Coloring</h3>
                         <p>Sort sparkling gems and reveal colorful pixel art puzzles.</p>
                     </div>
                 </a>
                 <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
-                    <span class="card-art hole" aria-label="Hole Swallow All"></span>
-                    <div>
+                    <div class="game-card-media">
+                        <img src="/assets/game-icons/hole.png" alt="Hole Swallow All">
+                    </div>
+                    <div class="game-card-body">
                         <h3>Hole Swallow All</h3>
                         <p>Grow the hole, collect everything, and clear playful stages.</p>
                     </div>
                 </a>
                 <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
-                    <span class="card-art pop" aria-label="Thorn And Balloons"></span>
-                    <div>
+                    <div class="game-card-media">
+                        <img src="/assets/game-icons/balloon.png" alt="Thorn And Balloons">
+                    </div>
+                    <div class="game-card-body">
                         <h3>Thorn And Balloons</h3>
                         <p>Bounce, aim, and pop balloons through clever puzzle layouts.</p>
                     </div>
                 </a>
                 <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
-                    <span class="card-art rotate" aria-label="More FunSpace games"></span>
-                    <div>
+                    <div class="game-card-media">
+                        <img src="/assets/game-icons/triple.png" alt="More FunSpace games">
+                    </div>
+                    <div class="game-card-body">
                         <h3>More Games</h3>
                         <p>Discover the latest casual releases by FunSpace on Google Play.</p>
                     </div>

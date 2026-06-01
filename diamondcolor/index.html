@@ -10,7 +10,7 @@
     <meta property="og:site_name" content="Fun Space Game">
     <meta property="og:description" content="Sort sparkling diamonds, complete jewel trays, and reveal beautiful pixel art puzzles.">
     <meta property="og:url" content="https://funspacegame.github.io/diamondcolor/index.html">
-    <meta property="og:image" content="https://funspacegame.github.io/static/logo.png">
+    <meta property="og:image" content="https://funspacegame.github.io/diamondcolor/assets/screenshot-1.png">
 
     <style>
         :root {
@@ -227,24 +227,22 @@
         }
 
         .game-preview {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
+            display: block;
             width: 100%;
             height: 100%;
-            padding: 44px 16px 18px;
+            padding: 0;
             border-radius: 22px;
             background:
                 linear-gradient(135deg, rgba(255, 95, 162, 0.18), rgba(27, 191, 210, 0.18)),
                 #fff;
+            overflow: hidden;
         }
 
-        .preview-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #4c4561;
-            font-size: 13px;
-            font-weight: 800;
+        .game-screenshot {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .diamond-art {
@@ -309,14 +307,13 @@
             box-shadow: 0 18px 44px rgba(53, 33, 91, 0.16);
         }
 
-        .mini-board {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 7px;
-            aspect-ratio: 1;
-            padding: 12px;
+        .mini-shot {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
             border-radius: 8px;
-            background: linear-gradient(135deg, rgba(255, 95, 162, 0.13), rgba(27, 191, 210, 0.16));
+            border: 1px solid rgba(60, 44, 110, 0.12);
         }
 
         .float-card span {
@@ -417,17 +414,15 @@
             gap: 14px;
         }
 
-        .art-card {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 8px;
-            aspect-ratio: 1;
-            padding: 16px;
+        .showcase-media img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--line);
-            background:
-                linear-gradient(135deg, rgba(255, 95, 162, 0.1), rgba(27, 191, 210, 0.1)),
-                #fff;
+            background: #fff;
+            box-shadow: 0 16px 34px rgba(50, 37, 84, 0.08);
         }
 
         .showcase ul {
@@ -619,35 +614,11 @@
             <div class="phone-stage" aria-label="Diamond Coloring gameplay preview">
                 <div class="phone">
                     <div class="game-preview">
-                        <div class="preview-top">
-                            <span>Level 36</span>
-                            <span>Calm Mode</span>
-                        </div>
-                        <div class="diamond-art">
-                            <span class="pixel"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel shine"></span><span class="pixel shine"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel"></span>
-                            <span class="pixel c2"></span><span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c2"></span>
-                            <span class="pixel c2"></span><span class="pixel c1"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c1"></span><span class="pixel c2"></span>
-                            <span class="pixel c5"></span><span class="pixel c1"></span><span class="pixel c4"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c4"></span><span class="pixel c1"></span><span class="pixel c5"></span>
-                            <span class="pixel c5"></span><span class="pixel c2"></span><span class="pixel c4"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c4"></span><span class="pixel c2"></span><span class="pixel c5"></span>
-                            <span class="pixel"></span><span class="pixel c2"></span><span class="pixel c1"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c1"></span><span class="pixel c2"></span><span class="pixel"></span>
-                            <span class="pixel"></span><span class="pixel"></span><span class="pixel c2"></span><span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c2"></span><span class="pixel"></span><span class="pixel"></span>
-                            <span class="pixel"></span><span class="pixel"></span><span class="pixel"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel"></span><span class="pixel"></span><span class="pixel"></span>
-                        </div>
-                        <div class="tray" aria-hidden="true">
-                            <span class="gem"></span>
-                            <span class="gem"></span>
-                            <span class="gem"></span>
-                            <span class="gem"></span>
-                            <span class="gem"></span>
-                        </div>
+                        <img class="game-screenshot" src="/diamondcolor/assets/screenshot-1.png" alt="Diamond Coloring gameplay screenshot">
                     </div>
                 </div>
                 <div class="float-card">
-                    <div class="mini-board" aria-hidden="true">
-                        <span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span>
-                        <span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span>
-                        <span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span><span class="gem"></span>
-                    </div>
+                    <img class="mini-shot" src="/diamondcolor/assets/screenshot-2.png" alt="Diamond Coloring pixel art screenshot">
                     <span>Sort gems and uncover pixel art.</span>
                 </div>
             </div>
@@ -714,22 +685,10 @@
         <section>
             <div class="showcase">
                 <div class="showcase-media">
-                    <div class="art-card" aria-label="Abstract diamond color board">
-                        <span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel c3"></span><span class="pixel c3"></span>
-                        <span class="pixel c1"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c2"></span><span class="pixel c3"></span><span class="pixel c5"></span>
-                        <span class="pixel c2"></span><span class="pixel c4"></span><span class="pixel shine"></span><span class="pixel shine"></span><span class="pixel c5"></span><span class="pixel c5"></span>
-                        <span class="pixel c2"></span><span class="pixel c4"></span><span class="pixel shine"></span><span class="pixel c3"></span><span class="pixel c5"></span><span class="pixel c1"></span>
-                        <span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel c1"></span><span class="pixel c1"></span>
-                        <span class="pixel c5"></span><span class="pixel c5"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c3"></span><span class="pixel c3"></span>
-                    </div>
-                    <div class="art-card" aria-label="Abstract jewel sorting tray">
-                        <span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c2"></span><span class="pixel c2"></span><span class="pixel c2"></span>
-                        <span class="pixel c3"></span><span class="pixel shine"></span><span class="pixel c3"></span><span class="pixel c2"></span><span class="pixel shine"></span><span class="pixel c2"></span>
-                        <span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c1"></span><span class="pixel c5"></span><span class="pixel c5"></span><span class="pixel c5"></span>
-                        <span class="pixel c1"></span><span class="pixel shine"></span><span class="pixel c1"></span><span class="pixel c5"></span><span class="pixel shine"></span><span class="pixel c5"></span>
-                        <span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel c3"></span>
-                        <span class="pixel c4"></span><span class="pixel c4"></span><span class="pixel shine"></span><span class="pixel c3"></span><span class="pixel c3"></span><span class="pixel shine"></span>
-                    </div>
+                    <img src="/diamondcolor/assets/screenshot-1.png" alt="Diamond Coloring gameplay screenshot 1">
+                    <img src="/diamondcolor/assets/screenshot-2.png" alt="Diamond Coloring gameplay screenshot 2">
+                    <img src="/diamondcolor/assets/screenshot-3.png" alt="Diamond Coloring gameplay screenshot 3">
+                    <img src="/diamondcolor/assets/screenshot-4.png" alt="Diamond Coloring gameplay screenshot 4">
                 </div>
                 <div class="showcase-content">
                     <h2>Color, logic, and sparkle in one puzzle.</h2>

@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hole Swallow All - Eat All</title>
+    <meta name="description" content="Hole Swallow All - Eat All is a fun puzzle game where players absorb objects, grow the black hole, and clear satisfying levels.">
+
+    <meta property="og:title" content="Hole Swallow All - Eat All">
+    <meta property="og:site_name" content="Fun Space Game">
+    <meta property="og:description" content="Absorb objects, grow your black hole, and clear every playful puzzle stage.">
+    <meta property="og:url" content="https://funspacegame.github.io/hole/index.html">
+    <meta property="og:image" content="https://funspacegame.github.io/hole/assets/screenshot-1.png">
+
+    <style>
+        :root {
+            --ink: #1b1633;
+            --muted: #68617a;
+            --panel: #ffffff;
+            --line: rgba(60, 44, 110, 0.14);
+            --pink: #7b61ff;
+            --aqua: #21b7e8;
+            --gold: #ffb84d;
+            --green: #24b46a;
+            --bg: #f7f8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--bg);
+        }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            background:
+                radial-gradient(circle at 18% 12%, rgba(123, 97, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 86% 8%, rgba(33, 183, 232, 0.18), transparent 30%),
+                linear-gradient(180deg, #f8fbff 0%, #fff9f0 52%, #fff 100%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 0;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 900;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.44), transparent 48%),
+                linear-gradient(135deg, var(--pink), var(--aqua));
+            box-shadow: 0 8px 18px rgba(255, 95, 162, 0.24);
+        }
+
+        .brand-icon {
+            display: block;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 8px 18px rgba(33, 183, 232, 0.22);
+        }
+
+        .store-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            background: #111827;
+            box-shadow: 0 10px 24px rgba(17, 24, 39, 0.14);
+            white-space: nowrap;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+            align-items: center;
+            min-height: calc(100vh - 98px);
+            gap: 42px;
+            padding: 24px 0 56px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 18px;
+            color: #b23772;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 26px;
+            height: 3px;
+            border-radius: 999px;
+            background: var(--pink);
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 620px;
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.02;
+            letter-spacing: 0;
+        }
+
+        .intro {
+            max-width: 620px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(18px, 2vw, 22px);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .store-badge {
+            display: inline-flex;
+            border: 0;
+        }
+
+        .store-badge img {
+            display: block;
+            width: 172px;
+            height: auto;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(92px, 1fr));
+            gap: 10px;
+            max-width: 620px;
+            margin-top: 34px;
+        }
+
+        .meta-item {
+            min-height: 86px;
+            padding: 14px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.76);
+            box-shadow: 0 12px 30px rgba(50, 37, 84, 0.06);
+        }
+
+        .meta-value {
+            display: block;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .meta-label {
+            display: block;
+            margin-top: 2px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .phone-stage {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-height: 570px;
+        }
+
+        .phone {
+            position: relative;
+            width: min(350px, 86vw);
+            aspect-ratio: 9 / 16;
+            padding: 18px;
+            border: 10px solid #211b32;
+            border-radius: 34px;
+            background: #fefcff;
+            box-shadow: 0 34px 70px rgba(53, 33, 91, 0.24);
+            overflow: hidden;
+        }
+
+        .phone::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 96px;
+            height: 18px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: #211b32;
+            z-index: 2;
+        }
+
+        .game-preview {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border-radius: 22px;
+            background:
+                linear-gradient(135deg, rgba(255, 95, 162, 0.18), rgba(27, 191, 210, 0.18)),
+                #fff;
+            overflow: hidden;
+        }
+
+        .game-screenshot {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .diamond-art {
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 4px;
+            width: min(230px, 100%);
+            aspect-ratio: 1;
+            padding: 14px;
+            border: 1px solid rgba(255, 95, 162, 0.18);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .pixel {
+            border-radius: 5px;
+            background: #f5edf7;
+        }
+
+        .pixel.c1 { background: var(--pink); }
+        .pixel.c2 { background: var(--aqua); }
+        .pixel.c3 { background: var(--gold); }
+        .pixel.c4 { background: #8a65ff; }
+        .pixel.c5 { background: var(--green); }
+        .pixel.shine {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.76), transparent 48%),
+                var(--aqua);
+        }
+
+        .tray {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .gem {
+            aspect-ratio: 1;
+            border-radius: 7px;
+            box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .gem:nth-child(1) { background: var(--pink); }
+        .gem:nth-child(2) { background: var(--aqua); }
+        .gem:nth-child(3) { background: var(--gold); }
+        .gem:nth-child(4) { background: #8a65ff; }
+        .gem:nth-child(5) { background: var(--green); }
+
+        .float-card {
+            position: absolute;
+            right: 0;
+            bottom: 70px;
+            width: 188px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 18px 44px rgba(53, 33, 91, 0.16);
+        }
+
+        .mini-shot {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(60, 44, 110, 0.12);
+        }
+
+        .float-card span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        section {
+            padding: 64px 0;
+        }
+
+        .section-head {
+            max-width: 680px;
+            margin-bottom: 26px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .section-head p {
+            margin: 14px 0 0;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .steps,
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .step,
+        .feature {
+            padding: 22px;
+            min-height: 190px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: 0 18px 44px rgba(50, 37, 84, 0.07);
+        }
+
+        .icon {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+            background: var(--pink);
+        }
+
+        .step:nth-child(2) .icon,
+        .feature:nth-child(2) .icon { background: var(--aqua); }
+        .step:nth-child(3) .icon,
+        .feature:nth-child(3) .icon { background: var(--gold); color: #503000; }
+        .step:nth-child(4) .icon,
+        .feature:nth-child(4) .icon { background: var(--green); }
+
+        h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+
+        .step p,
+        .feature p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: 34px;
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(50, 37, 84, 0.08);
+        }
+
+        .showcase-media {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .showcase-media img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            box-shadow: 0 16px 34px rgba(50, 37, 84, 0.08);
+        }
+
+        .showcase ul {
+            display: grid;
+            gap: 12px;
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .showcase li {
+            padding-left: 26px;
+            color: var(--muted);
+            background: linear-gradient(var(--pink), var(--pink)) 0 0.68em / 10px 10px no-repeat;
+        }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 34px;
+            border-radius: 8px;
+            color: #fff;
+            background: linear-gradient(135deg, #241b45, #52376d 48%, #b23772);
+        }
+
+        .cta h2 {
+            max-width: 640px;
+        }
+
+        .cta p {
+            max-width: 620px;
+            margin: 12px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 18px;
+        }
+
+        footer {
+            padding: 34px 0 42px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        footer a {
+            color: #b23772;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 920px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: 0;
+                padding-top: 22px;
+            }
+
+            .phone-stage {
+                min-height: 520px;
+            }
+
+            .float-card {
+                right: 3%;
+            }
+
+            .steps,
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .showcase,
+            .cta {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase {
+                display: block;
+            }
+
+            .showcase-content {
+                margin-top: 24px;
+            }
+
+            .cta {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .page {
+                width: min(100% - 24px, 1120px);
+            }
+
+            .nav {
+                align-items: flex-start;
+            }
+
+            .brand span {
+                max-width: 150px;
+                line-height: 1.15;
+            }
+
+            .store-link {
+                padding: 9px 12px;
+                font-size: 14px;
+            }
+
+            .meta {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phone-stage {
+                min-height: 470px;
+            }
+
+            .phone {
+                width: min(300px, 88vw);
+                border-width: 8px;
+            }
+
+            .float-card {
+                width: 142px;
+                right: 0;
+                bottom: 32px;
+            }
+
+            section {
+                padding: 44px 0;
+            }
+
+            .steps,
+            .features,
+            .showcase-media {
+                grid-template-columns: 1fr;
+            }
+
+            .step,
+            .feature,
+            .showcase,
+            .cta {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="nav" aria-label="Site header">
+        <a class="brand" href="/">
+            <img class="brand-icon" src="/hole/assets/icon.png" alt="Hole Swallow All icon">
+            <span>FunSpace</span>
+        </a>
+        <a class="store-link" href="https://play.google.com/store/apps/details?id=com.funspace.holeswallow" target="_blank" rel="noopener">Get on Google Play</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Satisfying black hole puzzle</p>
+                <h1>Hole Swallow All - Eat All</h1>
+                <p class="intro">Absorb all the objects, grow your black hole, and enjoy a fun, addictive puzzle game built around satisfying collection and clever level clearing.</p>
+                <div class="actions">
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.funspace.holeswallow" target="_blank" rel="noopener" aria-label="Download Hole Swallow All - Eat All on Google Play">
+                        <img src="/static/img/store_android.png" alt="Get it on Google Play">
+                    </a>
+                    <a class="store-link" href="#how-to-play">How to Play</a>
+                </div>
+                <div class="meta" aria-label="Game stats">
+                    <div class="meta-item">
+                        <span class="meta-value">3.8</span>
+                        <span class="meta-label">Star rating</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-value">5M+</span>
+                        <span class="meta-label">Downloads</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-value">Puzzle</span>
+                        <span class="meta-label">Category</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-value">Everyone</span>
+                        <span class="meta-label">Content rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone-stage" aria-label="Hole Swallow All gameplay preview">
+                <div class="phone">
+                    <div class="game-preview">
+                        <img class="game-screenshot" src="/hole/assets/screenshot-1.png" alt="Hole Swallow All gameplay screenshot">
+                    </div>
+                </div>
+                <div class="float-card">
+                    <img class="mini-shot" src="/hole/assets/screenshot-2.png" alt="Hole Swallow All level screenshot">
+                    <span>Swallow objects and grow the hole.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-play">
+            <div class="section-head">
+                <h2>How to Play</h2>
+                <p>Simple movement, quick growth, and satisfying object collection. Start small, swallow more, and clear the stage.</p>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <div class="icon">1</div>
+                    <h3>Move the Hole</h3>
+                    <p>Guide the black hole around each level and look for objects small enough to absorb.</p>
+                </article>
+                <article class="step">
+                    <div class="icon">2</div>
+                    <h3>Eat Small Items</h3>
+                    <p>Collect smaller objects first to build momentum and increase the hole's size.</p>
+                </article>
+                <article class="step">
+                    <div class="icon">3</div>
+                    <h3>Grow Bigger</h3>
+                    <p>As the hole expands, bigger targets become available and each move feels more rewarding.</p>
+                </article>
+                <article class="step">
+                    <div class="icon">4</div>
+                    <h3>Clear All</h3>
+                    <p>Swallow everything required by the level and enjoy the clean, satisfying finish.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <h2>Game Features</h2>
+                <p>A polished casual puzzle built for quick breaks, satisfying collection, and easy one-more-level play.</p>
+            </div>
+            <div class="features">
+                <article class="feature">
+                    <div class="icon">+</div>
+                    <h3>Absorb Everything</h3>
+                    <p>Move through bright stages, collect objects, and feel the black hole grow.</p>
+                </article>
+                <article class="feature">
+                    <div class="icon">*</div>
+                    <h3>Satisfying Growth</h3>
+                    <p>Start small, plan your path, and unlock bigger objects as you progress.</p>
+                </article>
+                <article class="feature">
+                    <div class="icon">Wi</div>
+                    <h3>Quick Levels</h3>
+                    <p>Fast stages make it easy to play for a minute or settle into a longer session.</p>
+                </article>
+                <article class="feature">
+                    <div class="icon">OK</div>
+                    <h3>Easy to Learn</h3>
+                    <p>Simple controls and clear goals make every level instantly approachable.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="showcase">
+                <div class="showcase-media">
+                    <img src="/hole/assets/screenshot-1.png" alt="Hole Swallow All gameplay screenshot 1">
+                    <img src="/hole/assets/screenshot-2.png" alt="Hole Swallow All gameplay screenshot 2">
+                    <img src="/hole/assets/screenshot-3.png" alt="Hole Swallow All gameplay screenshot 3">
+                    <img src="/hole/assets/screenshot-4.png" alt="Hole Swallow All gameplay screenshot 4">
+                </div>
+                <div class="showcase-content">
+                    <h2>Grow the hole and clear the level.</h2>
+                    <p class="intro">Hole Swallow All - Eat All turns simple movement into a satisfying puzzle loop: choose the right objects, grow at the right pace, and finish the stage cleanly.</p>
+                    <ul>
+                        <li>Plan the order of objects so the hole grows efficiently.</li>
+                        <li>Enjoy vivid visuals and smooth collection feedback.</li>
+                        <li>Play quick casual levels with easy, satisfying goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="cta">
+                <div>
+                    <h2>Download Hole Swallow All and start clearing playful stages.</h2>
+                    <p>Absorb objects, expand the black hole, and enjoy a fun collect-em-all puzzle experience.</p>
+                </div>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.funspace.holeswallow" target="_blank" rel="noopener" aria-label="Download on Google Play">
+                    <img src="/static/img/store_android.png" alt="Get it on Google Play">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fun Space Limited · Support: <a href="mailto:tinytapgame@gmail.com">tinytapgame@gmail.com</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/privacy_lite.html">Privacy Policy</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/terms-of-service.html">Terms of Service</a></p>
+    </footer>
+</div>
+</body>
+</html>

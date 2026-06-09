@@ -310,7 +310,6 @@ bidmachine.io, 35, RESELLER
 adcolony.com, c490f6e7399a25d6, RESELLER, 1ad675c9de6b5176
 appnexus.com, 10824, RESELLER
 appnexus.com, 9569, RESELLER
-chartboost.com, 5da62a1035b91e0aff190bf7, RESELLER
 districtm.io, 101649, RESELLER, 3fd707be9c4527c3
 google.com, pub-9685734445476814, RESELLER, f08c47fec0942fa0
 groundtruth.com, 107, RESELLER, 81cbf0a75a5e0e9a
@@ -1945,6 +1944,7 @@ added.tv, 550d543e, RESELLER
 xandr.com, 14884, RESELLER, f5ab79cb980f11d1
 copper6.com, 764091, RESELLER
 loopme.com,14003,DIRECT,6c8d5f95897a5a3b
+loopme.com,15498,DIRECT,6c8d5f95897a5a3b
 premiumads.net, 21221, DIRECT
 premiumads.com.br, 21221, DIRECT
 google.com, pub-3619045887187031, RESELLER, f08c47fec0942fa0
@@ -2434,8 +2434,6 @@ captiv.ai,3072,RESELLER
 carbonatix.com,176915265,DIRECT
 carbonatix.com,176915265,RESELLER
 castify.ai,1271351,RESELLER
-chartboost.com,54b83545c909a62a7be7c075,RESELLER
-chartboost.com,5d55f702facb6743686c50cc,RESELLER
 connatix.com,1955048180499370,RESELLER,2af98acdee0e81ed
 connekt.ai,8882281918,RESELLER
 consumable.com,2001465,RESELLER,aefcd3d2f45b5070

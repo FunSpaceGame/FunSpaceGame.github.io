@@ -163,6 +163,34 @@
 			"ios": "https://apps.apple.com/us/app/id6463769915",
 			"imageUrl": "https://funspacegame.github.io/gif/skewer2.gif",
 			"weight": 2000
+		},
+		{
+			"name": "Pupzle1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.queen.logic",
+			"ios": "https://apps.apple.com/us/app/id6779622309",
+			"imageUrl": "https://funspacegame.github.io/gif/pupzle_1.gif",
+			"weight": 4000
+		},
+		{
+			"name": "Pupzle2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.queen.logic",
+			"ios": "https://apps.apple.com/us/app/id6779622309",
+			"imageUrl": "https://funspacegame.github.io/gif/pupzle_2.gif",
+			"weight": 4000
+		},
+		{
+			"name": "DiamondColor1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.diamondcolor",
+			"ios": "https://apps.apple.com/us/app/id6762190414",
+			"imageUrl": "https://funspacegame.github.io/gif/diamond1.gif",
+			"weight": 4000
+		},
+		{
+			"name": "DiamondColor2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.diamondcolor",
+			"ios": "https://apps.apple.com/us/app/id6762190414",
+			"imageUrl": "https://funspacegame.github.io/gif/diamond2.gif",
+			"weight": 4000
 		}
 	]
 }

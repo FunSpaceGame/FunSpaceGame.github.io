@@ -169,6 +169,18 @@
 			"google": "https://play.google.com/store/apps/details?id=com.funspace.diamondcolor",
 			"ios": "https://apps.apple.com/us/app/id6762190414",
 			"imageUrl": "https://funspacegame.github.io/gif/diamond2.gif"
+		},
+		{
+			"name": "Pupzle1",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.queen.logic",
+			"ios": "https://apps.apple.com/us/app/id6779622309",
+			"imageUrl": "https://funspacegame.github.io/gif/pupzle_1.gif"
+		},
+		{
+			"name": "Pupzle2",
+			"google": "https://play.google.com/store/apps/details?id=com.funspace.queen.logic",
+			"ios": "https://apps.apple.com/us/app/id6779622309",
+			"imageUrl": "https://funspacegame.github.io/gif/pupzle_2.gif"
 		}
 	],
 	"urls": [

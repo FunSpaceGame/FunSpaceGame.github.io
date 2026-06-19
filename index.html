@@ -3,708 +3,683 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fun Space Game</title>
-    <meta name="description" content="Fun Space Limited creates colorful, easy-to-play mobile games for players around the world.">
+    <title>Fun Space — Casual Game Studio</title>
+    <meta name="description" content="Fun Space Limited is a casual game studio crafting bright, easy-to-play mobile games for players around the world.">
 
-    <meta property="og:title" content="Fun Space Game">
-    <meta property="og:site_name" content="Fun Space Game">
-    <meta property="og:description" content="Colorful casual mobile games by Fun Space Limited.">
+    <meta property="og:title" content="Fun Space — Casual Game Studio">
+    <meta property="og:site_name" content="Fun Space">
+    <meta property="og:description" content="A casual game studio crafting bright, easy-to-play mobile games.">
     <meta property="og:url" content="https://funspacegame.github.io/">
     <meta property="og:image" content="https://funspacegame.github.io/static/logo.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --ink: #171421;
-            --muted: #676275;
-            --line: rgba(23, 20, 33, 0.12);
-            --panel: rgba(255, 255, 255, 0.88);
-            --green: #00bf68;
-            --coral: #ff6b6b;
-            --blue: #1ea7ff;
-            --gold: #ffb84d;
-            --violet: #7357ff;
+            --bg: #fbfbfd;
+            --bg-soft: #f3f3f8;
+            --surface: rgba(20, 18, 40, 0.025);
+            --surface-2: rgba(20, 18, 40, 0.05);
+            --line: rgba(20, 18, 40, 0.10);
+            --line-soft: rgba(20, 18, 40, 0.07);
+            --ink: #16151f;
+            --muted: #5e5c72;
+            --faint: #8b8a9c;
+            --accent: #6b46ff;
+            --accent-2: #11b387;
+            --radius: 18px;
+            --display: "Space Grotesk", system-ui, sans-serif;
+            --body: "Inter", system-ui, -apple-system, sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         html {
             scroll-behavior: smooth;
-            background: #fffdf8;
+            background: var(--bg);
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
             margin: 0;
             min-width: 320px;
             color: var(--ink);
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
+            font-family: var(--body);
+            line-height: 1.6;
             background:
-                radial-gradient(circle at 12% 10%, rgba(0, 191, 104, 0.16), transparent 28%),
-                radial-gradient(circle at 86% 4%, rgba(255, 107, 107, 0.16), transparent 28%),
-                linear-gradient(180deg, #fffdf8 0%, #f8fbff 46%, #ffffff 100%);
+                radial-gradient(1100px 620px at 78% -8%, rgba(124, 92, 255, 0.12), transparent 60%),
+                radial-gradient(900px 560px at 6% 4%, rgba(24, 211, 155, 0.10), transparent 55%),
+                var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
+        a { color: inherit; text-decoration: none; }
+        img { display: block; }
+
+        h1, h2, h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin: 0;
         }
+
+        p { margin: 0; }
 
         .page {
-            width: min(1160px, calc(100% - 32px));
+            width: min(1180px, calc(100% - 40px));
             margin: 0 auto;
         }
 
+        /* ---------- Nav ---------- */
         .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(14px);
+            background: rgba(251, 251, 253, 0.72);
+            border-bottom: 1px solid var(--line-soft);
+        }
+
+        .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 18px;
-            padding: 22px 0;
+            padding: 16px 0;
         }
 
         .brand {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            color: var(--ink);
-            font-size: 18px;
-            font-weight: 800;
-            text-decoration: none;
-            letter-spacing: 0;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: -0.01em;
         }
 
         .brand img {
-            width: 46px;
-            height: 46px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             object-fit: contain;
+            background: var(--surface-2);
+            padding: 4px;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
         }
 
         .nav-links a {
-            min-height: 40px;
-            padding: 9px 14px;
-            border-radius: 8px;
+            padding: 9px 15px;
+            border-radius: 10px;
             color: var(--muted);
             font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
+            font-weight: 500;
+            transition: color .2s, background .2s;
         }
 
-        .nav-links a:hover {
-            color: var(--ink);
-            background: rgba(255, 255, 255, 0.7);
+        .nav-links a:hover { color: var(--ink); background: var(--surface); }
+
+        .nav-cta {
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: var(--ink);
+            color: var(--bg);
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform .2s, opacity .2s;
+        }
+        .nav-cta:hover { transform: translateY(-1px); opacity: .9; }
+
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
         }
 
+        /* ---------- Hero ---------- */
         .hero {
-            display: grid;
-            grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
-            align-items: center;
-            gap: 46px;
-            min-height: calc(100vh - 92px);
-            padding: 26px 0 68px;
+            position: relative;
+            padding: 86px 0 60px;
+            text-align: center;
         }
 
-        .eyebrow {
+        .pill {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin: 0 0 18px;
-            color: #087a45;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 3px;
+            gap: 9px;
+            padding: 7px 15px 7px 11px;
+            border: 1px solid var(--line);
             border-radius: 999px;
-            background: var(--green);
-        }
-
-        h1,
-        h2,
-        h3,
-        p {
-            margin-top: 0;
-        }
-
-        h1 {
-            max-width: 600px;
-            margin-bottom: 18px;
-            font-size: clamp(30px, 4.2vw, 52px);
-            line-height: 1.08;
-            letter-spacing: 0;
-        }
-
-        .lead {
-            max-width: 650px;
-            margin-bottom: 0;
+            background: var(--surface);
             color: var(--muted);
-            font-size: clamp(17px, 1.7vw, 20px);
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+        .pill .dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: var(--accent-2);
+            box-shadow: 0 0 0 4px rgba(24, 211, 155, 0.18);
         }
 
-        .actions {
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 78px);
+            line-height: 1.02;
+            margin: 0 auto;
+            max-width: 16ch;
+        }
+        .hero h1 .grad {
+            background: linear-gradient(120deg, var(--accent) 10%, var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero .lead {
+            max-width: 56ch;
+            margin: 26px auto 0;
+            color: var(--muted);
+            font-size: clamp(16px, 1.7vw, 19px);
+        }
+
+        .hero-actions {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 14px;
-            margin-top: 32px;
-        }
-
-        .store-badge {
-            display: inline-flex;
-            border: 0;
-            text-decoration: none;
-        }
-
-        .store-badge img {
-            display: block;
-            width: 164px;
-            height: auto;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            min-height: 48px;
-            padding: 12px 18px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            color: var(--ink);
-            font-weight: 800;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.82);
-            box-shadow: 0 14px 34px rgba(23, 20, 33, 0.08);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-            max-width: 600px;
+            gap: 14px;
             margin-top: 38px;
         }
 
-        .stat {
-            min-height: 96px;
-            padding: 18px;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 999px;
+            font-family: var(--body);
+            font-size: 15px;
+            font-weight: 600;
+            transition: transform .2s, opacity .2s, background .2s, border-color .2s;
+        }
+        .btn-primary {
+            background: linear-gradient(120deg, var(--accent), #5b7bff);
+            color: #fff;
+            box-shadow: 0 14px 40px rgba(124, 92, 255, 0.35);
+        }
+        .btn-primary:hover { transform: translateY(-2px); }
+        .btn-ghost {
             border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--panel);
-            box-shadow: 0 18px 45px rgba(23, 20, 33, 0.07);
+            color: var(--ink);
+            background: var(--surface);
+        }
+        .btn-ghost:hover { background: var(--surface-2); border-color: rgba(20, 18, 40, 0.18); }
+
+        /* floating icon marquee */
+        .hero-strip {
+            margin-top: 64px;
+            position: relative;
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+        .marquee {
+            display: flex;
+            gap: 22px;
+            width: max-content;
+            animation: scroll 32s linear infinite;
+        }
+        .marquee:hover { animation-play-state: paused; }
+        @keyframes scroll {
+            to { transform: translateX(-50%); }
+        }
+        .marquee img {
+            width: 92px;
+            height: 92px;
+            border-radius: 22px;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            box-shadow: 0 16px 36px rgba(20, 18, 40, 0.12);
         }
 
+        /* ---------- Section scaffolding ---------- */
+        section { padding: 78px 0; }
+
+        .sec-head {
+            max-width: 640px;
+            margin-bottom: 46px;
+        }
+        .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+        .kicker {
+            display: inline-block;
+            color: var(--accent-2);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .sec-head h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.08;
+        }
+        .sec-head p {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* ---------- Games grid ---------- */
+        .games {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .game-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+            overflow: hidden;
+            transition: transform .25s, border-color .25s, background .25s;
+        }
+        .game-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(420px 200px at 80% -10%, rgba(124,92,255,0.18), transparent 70%);
+            opacity: 0;
+            transition: opacity .3s;
+        }
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(20, 18, 40, 0.18);
+            background: var(--surface-2);
+        }
+        .game-card:hover::before { opacity: 1; }
+
+        .game-card .top {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .game-card .icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 10px 24px rgba(20, 18, 40, 0.12);
+        }
+        .game-card h3 {
+            font-size: 19px;
+            line-height: 1.2;
+        }
+        .game-card .tag {
+            margin-top: 5px;
+            color: var(--faint);
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .game-card .desc {
+            position: relative;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 14.5px;
+            flex-grow: 1;
+        }
+        .game-card .play {
+            position: relative;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--ink);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .game-card .play .arrow { transition: transform .25s; }
+        .game-card:hover .play .arrow { transform: translateX(4px); }
+
+        /* ---------- Studio / values ---------- */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .value {
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
+        .value .num {
+            font-family: var(--display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+        }
+        .value h3 {
+            margin-top: 14px;
+            font-size: 20px;
+        }
+        .value p {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* ---------- Stats row ---------- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 26px;
+        }
+        .stat {
+            text-align: center;
+            padding: 28px 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
         .stat strong {
             display: block;
-            font-size: 28px;
-            line-height: 1;
+            font-family: var(--display);
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 600;
+            background: linear-gradient(120deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-
         .stat span {
             display: block;
             margin-top: 8px;
             color: var(--muted);
             font-size: 14px;
-            font-weight: 700;
         }
 
-        .showcase {
-            position: relative;
-            min-height: 520px;
-        }
-
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            transform: rotate(-2deg);
-        }
-
-        .game-tile {
+        /* ---------- CTA band ---------- */
+        .cta {
             position: relative;
             overflow: hidden;
-            display: grid;
-            place-items: center;
-            aspect-ratio: 1;
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.82);
-            box-shadow: 0 18px 42px rgba(23, 20, 33, 0.12);
-        }
-
-        .game-icon {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        .game-tile:nth-child(2),
-        .game-tile:nth-child(5) {
-            transform: translateY(34px);
-        }
-
-        .hero-card {
-            position: absolute;
-            right: 24px;
-            bottom: 24px;
-            width: min(360px, 86%);
-            padding: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.92);
-            box-shadow: 0 24px 58px rgba(23, 20, 33, 0.18);
-            backdrop-filter: blur(14px);
-        }
-
-        .hero-card h2 {
-            margin-bottom: 8px;
-            font-size: 23px;
-            line-height: 1.14;
-            letter-spacing: 0;
-        }
-
-        .hero-card p {
-            margin-bottom: 0;
-            color: var(--muted);
-        }
-
-        section {
-            padding: 68px 0;
-        }
-
-        .section-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 28px;
-            margin-bottom: 26px;
-        }
-
-        .section-head h2 {
-            max-width: 680px;
-            margin-bottom: 0;
-            font-size: clamp(28px, 3.6vw, 44px);
-            line-height: 1.1;
-            letter-spacing: 0;
-        }
-
-        .section-head p {
-            max-width: 390px;
-            margin-bottom: 0;
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        .games {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .game-card {
-            display: flex;
-            min-height: 100%;
-            flex-direction: column;
-            overflow: hidden;
+            text-align: center;
+            padding: 64px 32px;
             border: 1px solid var(--line);
-            border-radius: 8px;
-            color: var(--ink);
-            text-decoration: none;
-            background: #fff;
-            box-shadow: 0 18px 42px rgba(23, 20, 33, 0.07);
-        }
-
-        .game-card-media {
-            display: grid;
-            place-items: center;
-            aspect-ratio: 1;
-            padding: 24px;
+            border-radius: 28px;
             background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(246, 248, 252, 0.92)),
-                #f6f7fb;
+                radial-gradient(700px 300px at 50% 0%, rgba(124,92,255,0.22), transparent 70%),
+                var(--bg-soft);
         }
-
-        .game-card-media img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: 18px;
-            object-fit: contain;
-            box-shadow: 0 14px 28px rgba(23, 20, 33, 0.12);
+        .cta h2 {
+            font-size: clamp(28px, 4.4vw, 46px);
+            line-height: 1.06;
+            max-width: 18ch;
+            margin: 0 auto;
         }
-
-        .game-card-body {
-            padding: 16px;
-        }
-
-        .game-card h3 {
-            margin-bottom: 6px;
-            font-size: 18px;
-            line-height: 1.18;
-            letter-spacing: 0;
-        }
-
-        .game-card p {
-            margin-bottom: 0;
+        .cta p {
+            max-width: 50ch;
+            margin: 18px auto 0;
             color: var(--muted);
-            font-size: 14px;
+            font-size: 17px;
         }
-
-        .principles {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-        }
-
-        .principle {
-            min-height: 220px;
-            padding: 26px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background: var(--panel);
-            box-shadow: 0 18px 42px rgba(23, 20, 33, 0.06);
-        }
-
-        .icon {
-            display: grid;
-            place-items: center;
-            width: 48px;
-            height: 48px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 22px;
-            font-weight: 900;
-            background: var(--blue);
-        }
-
-        .principle:nth-child(2) .icon {
-            background: var(--coral);
-        }
-
-        .principle:nth-child(3) .icon {
-            color: #4b3000;
-            background: var(--gold);
-        }
-
-        .principle h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
-            line-height: 1.18;
-            letter-spacing: 0;
-        }
-
-        .principle p {
-            margin-bottom: 0;
-            color: var(--muted);
-        }
-
-        .contact-band {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 24px;
-            padding: 34px;
-            border-radius: 8px;
-            color: #fff;
-            background:
-                linear-gradient(135deg, rgba(0, 191, 104, 0.9), rgba(30, 167, 255, 0.88) 48%, rgba(115, 87, 255, 0.86)),
-                #172033;
-            box-shadow: 0 22px 56px rgba(23, 20, 33, 0.16);
-        }
-
-        .contact-band h2 {
-            margin-bottom: 10px;
-            font-size: clamp(26px, 3.2vw, 38px);
-            line-height: 1.12;
-            letter-spacing: 0;
-        }
-
-        .contact-band p {
-            max-width: 680px;
-            margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.84);
-            font-size: 16px;
-        }
-
-        .contact-actions {
+        .cta .store-row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 12px;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 32px;
         }
+        .store-badge img { height: 50px; width: auto; }
 
-        .contact-actions .button {
-            color: var(--ink);
-            background: #fff;
-        }
-
+        /* ---------- Footer ---------- */
         footer {
+            border-top: 1px solid var(--line-soft);
+            padding: 40px 0;
+        }
+        .foot-inner {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            padding: 34px 0 42px;
-            color: var(--muted);
+            color: var(--faint);
             font-size: 14px;
         }
+        .foot-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+        .foot-links a { color: var(--muted); transition: color .2s; }
+        .foot-links a:hover { color: var(--ink); }
 
-        footer a {
-            color: #087a45;
-            font-weight: 800;
-            text-decoration: none;
+        @media (max-width: 880px) {
+            .games, .values, .stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .games, .values, .stats { grid-template-columns: 1fr; }
+            section { padding: 56px 0; }
+            .hero { padding-top: 56px; }
+            .marquee img { width: 76px; height: 76px; border-radius: 18px; }
         }
 
-        @media (max-width: 960px) {
-            .hero {
-                grid-template-columns: 1fr;
-                min-height: 0;
-            }
-
-            .showcase {
-                min-height: auto;
-            }
-
-            .showcase-grid {
-                transform: none;
-            }
-
-            .hero-card {
-                position: relative;
-                right: auto;
-                bottom: auto;
-                width: 100%;
-                margin-top: 16px;
-            }
-
-            .games,
-            .principles {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .section-head,
-            .contact-band,
-            footer {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .contact-actions {
-                justify-content: flex-start;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page {
-                width: min(100% - 24px, 1160px);
-            }
-
-            .nav {
-                align-items: flex-start;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .brand span {
-                max-width: 180px;
-                line-height: 1.1;
-            }
-
-            .hero {
-                padding-bottom: 46px;
-            }
-
-            .actions {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .stats,
-            .showcase-grid,
-            .games,
-            .principles {
-                grid-template-columns: 1fr;
-            }
-
-            .game-tile:nth-child(2),
-            .game-tile:nth-child(5) {
-                transform: none;
-            }
-
-            section {
-                padding: 48px 0;
-            }
-
-            .contact-band,
-            .principle {
-                padding: 22px;
-            }
+        @media (prefers-reduced-motion: reduce) {
+            .marquee { animation: none; }
+            * { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
-<div class="page">
-    <header class="nav" aria-label="Fun Space Game navigation">
-        <a class="brand" href="/">
-            <img src="/static/logo.png" alt="Fun Space Game logo">
-            <span>Fun Space Game</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-            <a href="#games">Games</a>
-            <a href="#studio">Studio</a>
-            <a href="#support">Support</a>
-        </nav>
+    <header class="nav">
+        <div class="page nav-inner">
+            <a class="brand" href="/">
+                <img src="static/logo.png" alt="Fun Space logo">
+                <span>Fun Space</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#games">Games</a>
+                <a href="#studio">Studio</a>
+                <a href="#support">Support</a>
+            </nav>
+            <a class="nav-cta" href="#games">Play now</a>
+        </div>
     </header>
 
     <main>
+        <!-- Hero -->
         <section class="hero">
-            <div>
-                <p class="eyebrow">Fun Space Limited</p>
-                <h1>Colorful mobile games made for quick joy.</h1>
-                <p class="lead">We build approachable casual games with bright visuals, satisfying interactions, and levels players can enjoy anywhere.</p>
-                <div class="actions">
-                    <a class="store-badge" target="_blank" rel="noopener" href="https://apps.apple.com/us/developer/fun-space-limited/id1591562338" aria-label="View Fun Space Limited on the App Store">
-                        <img src="/static/img/store_ios.png" alt="Download on the App Store">
-                    </a>
-                    <a class="store-badge" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444" aria-label="View FunSpace on Google Play">
-                        <img src="/static/img/store_android.png" alt="Get it on Google Play">
-                    </a>
-                    <a class="button" href="#games">Explore games</a>
-                </div>
-                <div class="stats" aria-label="Studio highlights">
-                    <div class="stat">
-                        <strong>30+</strong>
-                        <span>Playable casual experiences</span>
-                    </div>
-                    <div class="stat">
-                        <strong>Global</strong>
-                        <span>Players across app stores</span>
-                    </div>
-                    <div class="stat">
-                        <strong>Easy</strong>
-                        <span>Pick up, play, and smile</span>
-                    </div>
+            <div class="page">
+                <span class="pill"><span class="dot"></span> Casual game studio · Fun Space Limited</span>
+                <h1>Tiny games,<br><span class="grad">big little moments.</span></h1>
+                <p class="lead">We design bright, easy-to-play mobile games — quick to pick up, satisfying to master, and made to bring a little joy to any spare minute.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#games">Explore our games</a>
+                    <a class="btn btn-ghost" href="#studio">About the studio</a>
                 </div>
             </div>
 
-            <div class="showcase" aria-label="Fun Space game previews">
-                <div class="showcase-grid">
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/diamondcolor.png" alt="Diamond Coloring app icon"></div>
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/hole.png" alt="Hole Swallow All app icon"></div>
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/balloon.png" alt="Thorn And Balloons app icon"></div>
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/triple.png" alt="Triple Rotate app icon"></div>
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/juice.png" alt="Juice Run app icon"></div>
-                    <div class="game-tile"><img class="game-icon" src="/assets/game-icons/goodsmerge.png" alt="Goods Merge app icon"></div>
-                </div>
-                <div class="hero-card">
-                    <h2>Small games, polished moments.</h2>
-                    <p>Each title is tuned for clear goals, fast feedback, and playful visual rewards.</p>
+            <div class="hero-strip">
+                <div class="marquee">
+                    <img src="assets/game-icons/diamondcolor.png" alt="Diamond Coloring">
+                    <img src="assets/game-icons/hole.png" alt="Hole Swallow All">
+                    <img src="assets/game-icons/balloon.png" alt="Thorn And Balloons">
+                    <img src="assets/game-icons/triple.png" alt="Triple Rotate">
+                    <img src="assets/game-icons/juice.png" alt="Juice Run">
+                    <img src="assets/game-icons/goodsmerge.png" alt="Goods Merge">
+                    <!-- duplicate for seamless loop -->
+                    <img src="assets/game-icons/diamondcolor.png" alt="" aria-hidden="true">
+                    <img src="assets/game-icons/hole.png" alt="" aria-hidden="true">
+                    <img src="assets/game-icons/balloon.png" alt="" aria-hidden="true">
+                    <img src="assets/game-icons/triple.png" alt="" aria-hidden="true">
+                    <img src="assets/game-icons/juice.png" alt="" aria-hidden="true">
+                    <img src="assets/game-icons/goodsmerge.png" alt="" aria-hidden="true">
                 </div>
             </div>
         </section>
 
+        <!-- Games -->
         <section id="games">
-            <div class="section-head">
-                <h2>Featured games from our studio.</h2>
-                <p>From jewel sorting to balloon popping and satisfying collection games, our catalog is built around simple ideas that feel great in motion.</p>
-            </div>
-            <div class="games">
-                <a class="game-card" href="/diamondcolor/index.html">
-                    <div class="game-card-media">
-                        <img src="/assets/game-icons/diamondcolor.png" alt="Diamond Coloring - Jewel Sort">
-                    </div>
-                    <div class="game-card-body">
-                        <h3>Diamond Coloring</h3>
-                        <p>Sort sparkling gems and reveal colorful pixel art puzzles.</p>
-                    </div>
-                </a>
-                <a class="game-card" href="/hole/index.html">
-                    <div class="game-card-media">
-                        <img src="/assets/game-icons/hole.png" alt="Hole Swallow All">
-                    </div>
-                    <div class="game-card-body">
-                        <h3>Hole Swallow All</h3>
-                        <p>Grow the hole, collect everything, and clear playful stages.</p>
-                    </div>
-                </a>
-                <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
-                    <div class="game-card-media">
-                        <img src="/assets/game-icons/balloon.png" alt="Thorn And Balloons">
-                    </div>
-                    <div class="game-card-body">
-                        <h3>Thorn And Balloons</h3>
-                        <p>Bounce, aim, and pop balloons through clever puzzle layouts.</p>
-                    </div>
-                </a>
-                <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
-                    <div class="game-card-media">
-                        <img src="/assets/game-icons/triple.png" alt="More FunSpace games">
-                    </div>
-                    <div class="game-card-body">
-                        <h3>More Games</h3>
-                        <p>Discover the latest casual releases by FunSpace on Google Play.</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section id="studio">
-            <div class="section-head">
-                <h2>Designed to feel friendly from the first tap.</h2>
-                <p>Our games focus on immediate understanding, cheerful art direction, and steady progression for everyday play.</p>
-            </div>
-            <div class="principles">
-                <article class="principle">
-                    <div class="icon">01</div>
-                    <h3>Instant clarity</h3>
-                    <p>Players should know what to do in seconds, then keep discovering satisfying ways to improve.</p>
-                </article>
-                <article class="principle">
-                    <div class="icon">02</div>
-                    <h3>Bright feedback</h3>
-                    <p>Every pop, match, sort, and collect action is supported by playful motion and visual reward.</p>
-                </article>
-                <article class="principle">
-                    <div class="icon">03</div>
-                    <h3>Easy return</h3>
-                    <p>Levels are built for quick breaks, relaxed sessions, and smooth progress across devices.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="support">
-            <div class="contact-band">
-                <div>
-                    <h2>Play our games or get in touch.</h2>
-                    <p>Find Fun Space Limited on major app stores, or contact support for privacy, refunds, and player help.</p>
+            <div class="page">
+                <div class="sec-head">
+                    <span class="kicker">Our games</span>
+                    <h2>A catalog built around simple, satisfying ideas.</h2>
+                    <p>From jewel sorting to balloon popping and merging, every title is tuned for clear goals and playful feedback.</p>
                 </div>
-                <div class="contact-actions">
-                    <a class="button" href="mailto:tinytapgame@gmail.com">Email support</a>
-                    <a class="button" target="_blank" rel="noopener" href="https://www.minigame.io/privacy_lite.html">Privacy policy</a>
+
+                <div class="games">
+                    <a class="game-card" href="/diamondcolor/index.html">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/diamondcolor.png" alt="Diamond Coloring">
+                            <div>
+                                <h3>Diamond Coloring</h3>
+                                <div class="tag">Jewel sort · Puzzle</div>
+                            </div>
+                        </div>
+                        <p class="desc">Sort sparkling gems and reveal colorful pixel-art puzzles, one satisfying match at a time.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+
+                    <a class="game-card" href="/hole/index.html">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/hole.png" alt="Hole Swallow All">
+                            <div>
+                                <h3>Hole Swallow All</h3>
+                                <div class="tag">Arcade · Casual</div>
+                            </div>
+                        </div>
+                        <p class="desc">Grow your hole, swallow everything in sight, and clear playful stages with ease.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+
+                    <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/balloon.png" alt="Thorn And Balloons">
+                            <div>
+                                <h3>Thorn And Balloons</h3>
+                                <div class="tag">Aim · Puzzle</div>
+                            </div>
+                        </div>
+                        <p class="desc">Bounce, aim, and pop balloons through clever layouts that get smarter as you go.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+
+                    <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/triple.png" alt="Triple Rotate">
+                            <div>
+                                <h3>Triple Rotate</h3>
+                                <div class="tag">Match · Brain</div>
+                            </div>
+                        </div>
+                        <p class="desc">Rotate, align, and match tiles in a calm, tactile puzzle made for quick breaks.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+
+                    <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/juice.png" alt="Juice Run">
+                            <div>
+                                <h3>Juice Run</h3>
+                                <div class="tag">Runner · Casual</div>
+                            </div>
+                        </div>
+                        <p class="desc">Dash through colorful lanes, collect fruit, and blend the juiciest run possible.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+
+                    <a class="game-card" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444">
+                        <div class="top">
+                            <img class="icon" src="assets/game-icons/goodsmerge.png" alt="Goods Merge">
+                            <div>
+                                <h3>Goods Merge</h3>
+                                <div class="tag">Merge · Idle</div>
+                            </div>
+                        </div>
+                        <p class="desc">Combine goods, unlock new items, and grow a tidy, ever-rewarding collection.</p>
+                        <span class="play">Play <span class="arrow">→</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio -->
+        <section id="studio">
+            <div class="page">
+                <div class="sec-head">
+                    <span class="kicker">The studio</span>
+                    <h2>Designed to feel friendly from the very first tap.</h2>
+                    <p>Fun Space Limited builds casual games around three simple beliefs.</p>
+                </div>
+
+                <div class="values">
+                    <article class="value">
+                        <div class="num">01</div>
+                        <h3>Instant clarity</h3>
+                        <p>Players understand what to do in seconds, then keep discovering satisfying ways to improve.</p>
+                    </article>
+                    <article class="value">
+                        <div class="num">02</div>
+                        <h3>Bright feedback</h3>
+                        <p>Every pop, match, and merge is backed by playful motion and a clear sense of reward.</p>
+                    </article>
+                    <article class="value">
+                        <div class="num">03</div>
+                        <h3>Easy return</h3>
+                        <p>Levels are built for quick breaks and relaxed sessions, with smooth progress across devices.</p>
+                    </article>
+                </div>
+
+                <div class="stats">
+                    <div class="stat"><strong>30+</strong><span>Casual games released</span></div>
+                    <div class="stat"><strong>Global</strong><span>Players across app stores</span></div>
+                    <div class="stat"><strong>iOS &amp; Android</strong><span>Available everywhere</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="support">
+            <div class="page">
+                <div class="cta">
+                    <h2>Find your next favorite little game.</h2>
+                    <p>Download Fun Space titles on the App Store and Google Play, or reach out for support, privacy, and player help.</p>
+                    <div class="store-row">
+                        <a class="store-badge" target="_blank" rel="noopener" href="https://apps.apple.com/us/developer/fun-space-limited/id1591562338" aria-label="Fun Space Limited on the App Store">
+                            <img src="static/img/store_ios.png" alt="Download on the App Store">
+                        </a>
+                        <a class="store-badge" target="_blank" rel="noopener" href="https://play.google.com/store/apps/dev?id=8819166580229343444" aria-label="Fun Space on Google Play">
+                            <img src="static/img/store_android.png" alt="Get it on Google Play">
+                        </a>
+                        <a class="btn btn-ghost" href="mailto:tinytapgame@gmail.com">Email support</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <span>© Fun Space Limited</span>
-        <span><a href="mailto:tinytapgame@gmail.com">tinytapgame@gmail.com</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/privacy_lite.html">Privacy Policy</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/terms-of-service.html">Terms of Service</a></span>
+        <div class="page foot-inner">
+            <span>© Fun Space Limited</span>
+            <nav class="foot-links" aria-label="Footer">
+                <a href="mailto:tinytapgame@gmail.com">tinytapgame@gmail.com</a>
+                <a target="_blank" rel="noopener" href="https://www.minigame.io/privacy_lite.html">Privacy Policy</a>
+                <a target="_blank" rel="noopener" href="https://www.minigame.io/terms-of-service.html">Terms of Service</a>
+            </nav>
+        </div>
     </footer>
-</div>
 </body>
 </html>

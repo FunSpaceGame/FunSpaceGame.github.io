@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pixel Ants - Swarm Hunt</title>
+    <meta name="description" content="Pixel Ants - Swarm Hunt is a relaxing logic puzzle where players command tiny ant swarms, match colorful blocks, and reveal beautiful pixel art.">
+
+    <meta property="og:title" content="Pixel Ants - Swarm Hunt">
+    <meta property="og:site_name" content="Fun Space Game">
+    <meta property="og:description" content="Command tiny ant swarms, clear colorful blocks, and reveal every pixel-art surprise.">
+    <meta property="og:url" content="https://funspacegame.github.io/pixelants/index.html">
+    <meta property="og:image" content="https://funspacegame.github.io/pixelants/assets/screenshot-1.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #fbfcf5;
+            --bg-soft: #f1f8e8;
+            --surface: rgba(55, 91, 32, 0.035);
+            --surface-2: rgba(55, 91, 32, 0.07);
+            --line: rgba(34, 61, 21, 0.12);
+            --line-soft: rgba(34, 61, 21, 0.08);
+            --ink: #182116;
+            --muted: #5a6754;
+            --faint: #879181;
+            --accent: #ff9f1c;
+            --accent-2: #57b94c;
+            --accent-3: #7367ee;
+            --display: "Space Grotesk", system-ui, sans-serif;
+            --body: "Inter", system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            margin: 0;
+            min-width: 320px;
+            color: var(--ink);
+            font-family: var(--body);
+            line-height: 1.6;
+            background:
+                radial-gradient(1000px 620px at 90% -10%, rgba(255, 199, 65, 0.22), transparent 62%),
+                radial-gradient(900px 560px at 2% 4%, rgba(87, 185, 76, 0.15), transparent 58%),
+                var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { display: block; }
+        h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; }
+        p { margin: 0; }
+
+        .page { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px 0;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            font-family: var(--display);
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            object-fit: cover;
+            box-shadow: 0 10px 22px rgba(59, 104, 32, 0.18);
+        }
+        .store-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 11px 20px;
+            border-radius: 999px;
+            color: #fff;
+            font-weight: 600;
+            background: var(--ink);
+            box-shadow: 0 10px 24px rgba(24, 33, 22, 0.14);
+            white-space: nowrap;
+            transition: transform .2s, opacity .2s;
+        }
+        .store-link:hover { transform: translateY(-1px); opacity: .9; }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+            align-items: center;
+            gap: 52px;
+            padding: 36px 0 64px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+            color: #398c37;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+        .eyebrow::before { content: ""; width: 24px; height: 2px; border-radius: 99px; background: var(--accent-2); }
+        h1 { max-width: 650px; font-size: clamp(38px, 5.5vw, 66px); line-height: 1.01; }
+        h1 span {
+            background: linear-gradient(115deg, #f38b12 5%, #6fbc42 72%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .intro { max-width: 620px; margin-top: 22px; color: var(--muted); font-size: clamp(17px, 1.8vw, 20px); }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 32px; }
+        .store-badge { display: inline-flex; border: 0; transition: transform .2s; }
+        .store-badge:hover { transform: translateY(-2px); }
+        .store-badge img { width: 166px; height: 50px; object-fit: contain; }
+        .meta { display: grid; grid-template-columns: repeat(4, minmax(92px, 1fr)); gap: 12px; max-width: 650px; margin-top: 38px; }
+        .meta-item { padding: 16px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+        .meta-value { display: block; font-family: var(--display); font-size: 21px; font-weight: 600; }
+        .meta-label { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+        .phone-stage { position: relative; display: grid; place-items: center; min-height: 570px; }
+        .phone-glow { position: absolute; width: 380px; height: 380px; border-radius: 50%; background: rgba(255, 210, 72, .25); filter: blur(2px); }
+        .phone {
+            position: relative;
+            width: min(330px, 86vw);
+            aspect-ratio: 600 / 1299;
+            padding: 13px;
+            border: 10px solid #182116;
+            border-radius: 40px;
+            background: #fff;
+            box-shadow: 0 40px 80px rgba(47, 72, 29, .24);
+            overflow: hidden;
+            transform: rotate(1.5deg);
+        }
+        .phone::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            z-index: 2;
+            width: 88px;
+            height: 18px;
+            transform: translateX(-50%);
+            border-radius: 99px;
+            background: #182116;
+        }
+        .game-preview { width: 100%; height: 100%; border-radius: 25px; overflow: hidden; background: var(--bg-soft); }
+        .game-screenshot { width: 100%; height: 100%; object-fit: cover; }
+        .float-card {
+            position: absolute;
+            right: -2px;
+            bottom: 50px;
+            width: 182px;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 24px 50px rgba(47, 72, 29, .16);
+        }
+        .float-card-head { display: flex; align-items: center; gap: 10px; }
+        .float-card img { width: 42px; height: 42px; border-radius: 12px; object-fit: cover; }
+        .float-card strong { display: block; font-family: var(--display); font-size: 14px; }
+        .float-card span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+
+        section { padding: 72px 0; }
+        .section-head { max-width: 690px; margin-bottom: 40px; }
+        h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.08; }
+        .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; }
+
+        .steps, .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .step, .feature { padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+        .icon {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--display);
+            font-size: 18px;
+            font-weight: 700;
+            background: var(--accent);
+        }
+        .step:nth-child(2) .icon, .feature:nth-child(2) .icon { background: var(--accent-2); }
+        .step:nth-child(3) .icon, .feature:nth-child(3) .icon { background: var(--accent-3); }
+        .step:nth-child(4) .icon, .feature:nth-child(4) .icon { background: #ef5d8d; }
+        h3 { margin-bottom: 8px; font-size: 19px; line-height: 1.2; }
+        .step p, .feature p { color: var(--muted); font-size: 14.5px; }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            align-items: center;
+            gap: 44px;
+            padding: 38px;
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            background: linear-gradient(145deg, rgba(255, 221, 101, .12), rgba(87, 185, 76, .08));
+        }
+        .showcase-media { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .showcase-media img { width: 100%; aspect-ratio: 600 / 1299; object-fit: cover; border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 16px 34px rgba(47, 72, 29, .1); }
+        .showcase-content .intro { font-size: 17px; }
+        .showcase ul { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
+        .showcase li { position: relative; padding-left: 28px; color: var(--muted); }
+        .showcase li::before { content: ""; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 4px rgba(87, 185, 76, .13); }
+
+        .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            padding: 48px;
+            border-radius: 28px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(700px 320px at 88% -20%, rgba(255, 192, 43, .5), transparent 70%),
+                linear-gradient(135deg, #243c1d, #36652c);
+        }
+        .cta h2 { max-width: 650px; }
+        .cta p { max-width: 610px; margin-top: 14px; color: rgba(255, 255, 255, .78); font-size: 17px; }
+        .cta-actions { display: flex; flex-wrap: wrap; flex-shrink: 0; gap: 12px; }
+
+        footer { border-top: 1px solid var(--line-soft); padding: 32px 0; color: var(--faint); text-align: center; font-size: 14px; }
+        footer a { color: var(--muted); font-weight: 500; }
+        footer a:hover { color: var(--ink); }
+
+        @media (max-width: 940px) {
+            .hero { grid-template-columns: 1fr; padding-top: 24px; }
+            .phone-stage { min-height: 530px; }
+            .float-card { right: 6%; }
+            .steps, .features { grid-template-columns: repeat(2, 1fr); }
+            .showcase { display: block; }
+            .showcase-content { margin-top: 30px; }
+            .cta { align-items: flex-start; flex-direction: column; }
+        }
+        @media (max-width: 620px) {
+            .page { width: min(100% - 24px, 1140px); }
+            .brand span { max-width: 130px; line-height: 1.15; }
+            .store-link { min-height: 40px; padding: 8px 13px; font-size: 13px; }
+            .meta { grid-template-columns: repeat(2, 1fr); }
+            .phone-stage { min-height: 500px; }
+            .phone { width: min(292px, 84vw); border-width: 8px; }
+            .phone-glow { width: 280px; height: 280px; }
+            .float-card { right: 0; bottom: 28px; width: 158px; }
+            section { padding: 50px 0; }
+            .steps, .features { grid-template-columns: 1fr; }
+            .showcase-media { grid-template-columns: repeat(2, 1fr); }
+            .step, .feature, .showcase, .cta { padding: 22px; }
+            .cta-actions { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="nav" aria-label="Site header">
+        <a class="brand" href="/">
+            <img class="brand-icon" src="/pixelants/assets/icon.jpg" alt="Pixel Ants icon">
+            <span>FunSpace</span>
+        </a>
+        <a class="store-link" href="#download">Download game</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Colorful ant strategy puzzle</p>
+                <h1>Small ants.<br><span>Big brain moves.</span></h1>
+                <p class="intro">Command a busy ant colony, match every worker with the right color, and plan a clear path home. Each smart move uncovers another piece of delightful pixel art.</p>
+                <div class="actions">
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.funspace.pixelants" target="_blank" rel="noopener" aria-label="Download Pixel Ants - Swarm Hunt on Google Play">
+                        <img src="/static/img/store_android.png" alt="Get it on Google Play">
+                    </a>
+                    <a class="store-badge" href="https://apps.apple.com/us/app/id6799836370" target="_blank" rel="noopener" aria-label="Download Pixel Ants - Swarm Hunt on the App Store">
+                        <img src="/static/img/store_ios.png" alt="Download on the App Store">
+                    </a>
+                </div>
+                <div class="meta" aria-label="Game details">
+                    <div class="meta-item"><span class="meta-value">Puzzle</span><span class="meta-label">Genre</span></div>
+                    <div class="meta-item"><span class="meta-value">No timer</span><span class="meta-label">Play your way</span></div>
+                    <div class="meta-item"><span class="meta-value">Offline</span><span class="meta-label">Play anywhere</span></div>
+                    <div class="meta-item"><span class="meta-value">iOS + Android</span><span class="meta-label">Available on</span></div>
+                </div>
+            </div>
+
+            <div class="phone-stage" aria-label="Pixel Ants gameplay preview">
+                <div class="phone-glow" aria-hidden="true"></div>
+                <div class="phone">
+                    <div class="game-preview">
+                        <img class="game-screenshot" src="/pixelants/assets/screenshot-1.jpg" alt="Pixel Ants colorful pixel-art puzzle gameplay">
+                    </div>
+                </div>
+                <div class="float-card">
+                    <div class="float-card-head">
+                        <img src="/pixelants/assets/icon.jpg" alt="">
+                        <div><strong>Pixel Ants</strong><span>Every move reveals more</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-play">
+            <div class="section-head">
+                <h2>Lead the colony, one clever move at a time.</h2>
+                <p>The controls are simple, but the order matters. Keep routes clear and the whole swarm moving.</p>
+            </div>
+            <div class="steps">
+                <article class="step"><div class="icon">1</div><h3>Study the Board</h3><p>Check the colors, open paths, and the order your ants need to move.</p></article>
+                <article class="step"><div class="icon">2</div><h3>Send Your Ants</h3><p>Tap a worker to send it toward blocks that match its color.</p></article>
+                <article class="step"><div class="icon">3</div><h3>Keep Paths Clear</h3><p>Avoid traffic jams and leave a safe route back to the nest.</p></article>
+                <article class="step"><div class="icon">4</div><h3>Reveal the Art</h3><p>Clear every block and watch the hidden pixel picture come to life.</p></article>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <h2>A relaxing puzzle with plenty to discover.</h2>
+                <p>Bright characters, satisfying movement, and thoughtful levels make every completed picture feel earned.</p>
+            </div>
+            <div class="features">
+                <article class="feature"><div class="icon">🐜</div><h3>Unique Swarm Play</h3><p>Guide tiny workers through a fresh mix of transport, sorting, and logic.</p></article>
+                <article class="feature"><div class="icon">🎨</div><h3>Pixel Art Rewards</h3><p>Uncover animals, food, flowers, fantasy scenes, and more surprises.</p></article>
+                <article class="feature"><div class="icon">∞</div><h3>No Time Pressure</h3><p>Think ahead and solve each board at a pace that feels good.</p></article>
+                <article class="feature"><div class="icon">↗</div><h3>Growing Challenge</h3><p>Move from friendly early puzzles to clever brain-teasing layouts.</p></article>
+            </div>
+        </section>
+
+        <section>
+            <div class="showcase">
+                <div class="showcase-media">
+                    <img src="/pixelants/assets/screenshot-1.jpg" alt="Pixel Ants level with colorful pixel artwork">
+                    <img src="/pixelants/assets/screenshot-2.jpg" alt="Pixel Ants Statue of Liberty pixel puzzle">
+                    <img src="/pixelants/assets/screenshot-3.jpg" alt="Pixel Ants fox mask pixel puzzle">
+                    <img src="/pixelants/assets/screenshot-4.jpg" alt="Pixel Ants advanced pixel puzzle level">
+                </div>
+                <div class="showcase-content">
+                    <h2>Plan the flow. Complete the picture.</h2>
+                    <p class="intro">Every board is both a traffic puzzle and a colorful reveal. Choose the right sequence, match the right blocks, and keep the colony flowing smoothly.</p>
+                    <ul>
+                        <li>Use strategy, planning, and spatial thinking.</li>
+                        <li>Enjoy smooth animations and cheerful pixel graphics.</li>
+                        <li>Play one-handed, offline, and without a countdown.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="download">
+            <div class="cta">
+                <div>
+                    <h2>Ready to become the colony commander?</h2>
+                    <p>Download Pixel Ants - Swarm Hunt for free and reveal something new with every move.</p>
+                </div>
+                <div class="cta-actions">
+                    <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.funspace.pixelants" target="_blank" rel="noopener" aria-label="Get Pixel Ants on Google Play">
+                        <img src="/static/img/store_android.png" alt="Get it on Google Play">
+                    </a>
+                    <a class="store-badge" href="https://apps.apple.com/us/app/id6799836370" target="_blank" rel="noopener" aria-label="Get Pixel Ants on the App Store">
+                        <img src="/static/img/store_ios.png" alt="Download on the App Store">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fun Space Limited · Support: <a href="mailto:tinytapgame@gmail.com">tinytapgame@gmail.com</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/privacy_lite.html">Privacy Policy</a> · <a target="_blank" rel="noopener" href="https://www.minigame.io/terms-of-service.html">Terms of Service</a></p>
+    </footer>
+</div>
+</body>
+</html>
